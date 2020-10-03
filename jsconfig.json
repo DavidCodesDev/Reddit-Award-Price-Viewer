@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs"
+  },
+  "typeAcquisition": {
+    "include": ["chrome", "jquery"]
+  }
+}
