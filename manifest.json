@@ -1,29 +1,41 @@
 {
-  "name": "RedditPriceViewer",
-  "description": "RedditPriceViewer",
+  "name": "Reddit Award Price Viewer",
+  "description": "Displays the total price/cost of all awards a reddit post has received",
   "version": "0.1",
   "manifest_version": 2,
   "options_page": "options.html",
-  "permissions": ["activeTab", "declarativeContent", "tabs"],
-  "content_scripts": [],
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.reddit.com/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "jquery.js",
+        "redditPage.js"
+      ]
+    }
+  ],
   "background": {
-    "scripts": ["jquery.js", "background.js"],
+    "scripts": [
+      "jquery.js",
+      "background.js"
+    ],
     "persistent": true
   },
-  "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js; object-src 'self'",
-  "web_accessible_resources": ["*.mp3", "missionpaths.json"],
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "images/get_started16.png",
       "32": "images/get_started32.png",
-      "48": "images/get_started48.png",
+      "64": "images/get_started64.png",
       "128": "images/get_started128.png"
     },
     "icons": {
       "16": "images/get_started16.png",
       "32": "images/get_started32.png",
-      "48": "images/get_started48.png",
+      "64": "images/get_started64.png",
       "128": "images/get_started128.png"
     }
   }
